@@ -1,1 +1,12 @@
-<p>task-list works!</p>
+<div class="task-container">
+  <h1>Task List</h1>
+  <div class="task-list">
+    <div *ngFor="let task of tasks" class="task-card">
+      <h2>{{ task.title }}</h2>
+      <p>{{ task.description }}</p>
+      <span class="status" [ngClass]="getStatusLabel(task.status)">
+        {{ getStatusLabel(task.status) }}
+      </span>
+    </div>
+  </div>
+</div>
